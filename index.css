@@ -180,10 +180,6 @@ ul {
   fill: #3e5f70;
 }
 
-.legendWater:hover .svgWater {
-  fill: #3e5f70;
-}
-
 .svgWater:hover {
   cursor: pointer;
   fill: #3e5f70;
@@ -195,10 +191,6 @@ ul {
 
 .svgWater:hover ~ .legendWater {
   fill: #3e5f70;
-}
-
-.legendRailway:hover + #svgRailways circle {
-  fill: #bf593f;
 }
 
 .legendRailway:hover {
@@ -236,10 +228,6 @@ ul {
 }
 
 .legendNumber:hover path {
-  fill: pink;
-}
-
-.legendNumber:hover .routeNumberGroup .routeNumber {
   fill: pink;
 }
 
