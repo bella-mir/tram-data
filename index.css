@@ -1,0 +1,416 @@
+@import url("https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Ephesis&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Stint+Ultra+Condensed&display=swap");
+
+/* Page */
+
+.root {
+  background-color: white;
+  font-family: "Poppins", "Arial", sans-serif;
+  color: #213547;
+}
+
+a {
+  text-decoration: none;
+  color: #f24194;
+}
+
+a:hover {
+  color: #bf8d30;
+  opacity: 0.8;
+}
+
+ol {
+  margin-block-start: 0.5em;
+  padding-inline-start: 15px;
+}
+
+ul {
+  list-style-type: none;
+  margin-block-start: 0.5em;
+  padding-inline-start: 15px;
+}
+
+/* header */
+
+.header-wrapper {
+  background-color: #25408f;
+  color: white;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  max-width: 80vw;
+  margin: 0 auto;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px 0;
+  gap: 20px;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  bottom: 28px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: white;
+}
+
+.title {
+  font-size: 60px;
+  font-weight: 600;
+}
+
+@keyframes moveAndFlip {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(80vw - 400px));
+  }
+}
+
+#movingTram {
+  animation: moveAndFlip 10s linear infinite alternate;
+  align-self: end;
+}
+
+/* section */
+
+.section {
+  display: flex;
+  flex-direction: column;
+  max-width: 80vw;
+  margin: 40px auto;
+}
+
+.flexRow {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.assignmentBox {
+  width: max-content;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 3px solid #25828f;
+  background-color: #dfe7ff;
+}
+
+.assignmentTitle {
+  color: #25828f;
+  font-size: 14px;
+}
+
+.assignmentSection {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Footer Part */
+
+.footer__wrapper {
+  position: absolute;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  margin-top: 50px;
+  left: 0;
+}
+
+.footer {
+  margin: 0 auto;
+  padding: 24px 5% 24px 5%;
+  max-width: 1184px;
+  width: 100%;
+  display: flex;
+  align-items: end;
+}
+
+.footer__copyright {
+  right: 0;
+  margin: 0;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 14px;
+  margin-left: auto;
+  color: gray;
+}
+
+/* European Cities with Trams map */
+
+.city:hover {
+  cursor: pointer;
+}
+
+.city-label {
+  font-size: 10px;
+  fill: #25828f;
+}
+
+/* Main Map - Tram Lines in Saint Petersburg */
+
+.map {
+  border-radius: 20px;
+  background-color: #f8f8f8;
+}
+
+.legendWater {
+  border-radius: 20px;
+  fill: #b4dcf0;
+  transition: fill 0.3s ease;
+}
+
+.svgWater {
+  fill: #b4dcf0;
+  transition: fill 0.3s ease;
+}
+
+.legendWater:hover {
+  cursor: pointer;
+  fill: #3e5f70;
+}
+
+.legendWater:hover .svgWater {
+  fill: #3e5f70;
+}
+
+.svgWater:hover {
+  cursor: pointer;
+  fill: #3e5f70;
+}
+
+.svgWater:hover ~ .svgWater {
+  fill: #3e5f70;
+}
+
+.svgWater:hover ~ .legendWater {
+  fill: #3e5f70;
+}
+
+.legendRailway:hover + #svgRailways circle {
+  fill: #bf593f;
+}
+
+.legendRailway:hover {
+  cursor: pointer;
+}
+
+#svgRailways circle {
+  fill: #bf863f;
+  stroke-width: 0;
+}
+
+#svgRailways path {
+  fill: #f2e7d9;
+  transition: fill 0.3s ease;
+}
+
+#svgRailways:hover {
+  cursor: pointer;
+}
+
+#svgRailways:hover circle {
+  fill: #bf593f;
+}
+
+#svgRailways:hover ~ .legendRailway circle {
+  fill: #bf593f;
+}
+
+.legendRailway:hover circle {
+  fill: #bf593f;
+}
+
+.legendNumber:hover {
+  cursor: pointer;
+}
+
+.legendNumber:hover path {
+  fill: pink;
+}
+
+.legendNumber:hover .routeNumberGroup .routeNumber {
+  fill: pink;
+}
+
+.routeNumber {
+  fill: #f7f2eb;
+  transition: fill 0.3s ease;
+}
+
+.routeNumberGroup:hover {
+  cursor: pointer;
+}
+
+.routeNumberGroup:hover .routeNumber {
+  fill: pink;
+}
+
+.routeNumberGroup:hover ~ .legendNumber path {
+  fill: pink;
+}
+
+.number {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.route {
+  stroke-width: 3;
+  transition: stroke-width 0.3s ease;
+}
+
+.route:hover {
+  cursor: pointer;
+  stroke-width: 5;
+}
+
+/* Main Map legend - general rules */
+
+.legendText {
+  font-size: 10px;
+}
+
+.hint {
+  font-size: 12px;
+  color: #f24194;
+  margin-left: 10px;
+}
+
+.hint2 {
+  font-size: 8px;
+  fill: #25828f;
+}
+
+/* Showing number of a line when hover on it */
+/* Without svg assignment, I would rather do it using d3.js */
+
+.route48:hover ~ #number48 {
+  opacity: 1;
+}
+
+.route56:hover ~ #number56 {
+  opacity: 1;
+}
+
+.route60:hover ~ #number60 {
+  opacity: 1;
+}
+
+.route49:hover ~ #number49 {
+  opacity: 1;
+}
+
+.route36:hover ~ #number36 {
+  opacity: 1;
+}
+
+.route38:hover ~ #number38 {
+  opacity: 1;
+}
+
+.route29:hover ~ #number29 {
+  opacity: 1;
+}
+
+.route45:hover ~ #number45 {
+  opacity: 1;
+}
+
+.route25:hover ~ #number25 {
+  opacity: 1;
+}
+
+.route16:hover ~ #number16 {
+  opacity: 1;
+}
+
+.route27:hover ~ #number27 {
+  opacity: 1;
+}
+
+.routeA:hover ~ #numberA {
+  opacity: 1;
+}
+
+.route7:hover ~ #number7 {
+  opacity: 1;
+}
+
+.route65:hover ~ #number65 {
+  opacity: 1;
+}
+
+.route39:hover ~ #number39 {
+  opacity: 1;
+}
+
+.route30:hover ~ #number30 {
+  opacity: 1;
+}
+
+.route10:hover ~ #number10 {
+  opacity: 1;
+}
+
+.route23:hover ~ #number23 {
+  opacity: 1;
+}
+
+.route6:hover ~ #number6 {
+  opacity: 1;
+}
+
+.route51:hover ~ #number51 {
+  opacity: 1;
+}
+
+.route57:hover ~ #number57 {
+  opacity: 1;
+}
+
+.route40:hover ~ #number40 {
+  opacity: 1;
+}
+
+.route61:hover ~ #number61 {
+  opacity: 1;
+}
+
+.route20:hover ~ #number20 {
+  opacity: 1;
+}
+
+.route58:hover ~ #number58 {
+  opacity: 1;
+}
+
+.route9:hover ~ #number9 {
+  opacity: 1;
+}
+
+.route40:hover ~ #number40 {
+  opacity: 1;
+}
+
+.route21:hover ~ #number21 {
+  opacity: 1;
+}
+
+.route48:hover ~ #number48 {
+  opacity: 1;
+}
+
+.route19:hover ~ #number19 {
+  opacity: 1;
+}
